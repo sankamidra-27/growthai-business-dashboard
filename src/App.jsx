@@ -33,7 +33,7 @@ function App() {
         <h2 className="text-green-600 text-sm font-semibold mb-2">
           AI-Powered Business & Web Growth Solutions
         </h2>
-        <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-[linear-gradient(to_right,_#15813e,_#22c55e)]">
+        <h1 className="text-4xl sm:text-5xl px-4 py-9 font-bold text-transparent bg-clip-text bg-[linear-gradient(to_right,_#15813e,_#22c55e)]">
           Get Found. Get Chosen. Grow Effortlessly.
         </h1>
 

@@ -47,7 +47,7 @@ function App() {
           </div>
         ) : (
           result && (
-            <div className="mt-6 h-[180px] bg-white p-6 rounded-lg shadow-md w-full max-w-xl mx-auto text-left flex flex-col justify-between space-y-4">
+            <div className="mt-6 h-[200px] bg-white p-6 rounded-lg shadow-md w-full max-w-xl mx-auto text-left flex flex-col justify-between space-y-4">
               <ResultCard
                 result={result}
                 onRegenerate={handleRegenerate}

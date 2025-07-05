@@ -13,7 +13,7 @@ function App() {
     setFormData({ name, location });
     const response = await submitBusinessData(name, location);
     setResult(response);
-    setTimeout(() => setLoading(false), 500); // simulate skeleton
+    setTimeout(() => setLoading(false),100); 
   };
 
   const handleRegenerate = async () => {
@@ -24,7 +24,7 @@ function App() {
       result.headline
     );
     setResult((prev) => ({ ...prev, headline: response.headline }));
-    setTimeout(() => setLoading(false), 500); // simulate skeleton
+    setTimeout(() => setLoading(false),100); 
   };
 
   return (

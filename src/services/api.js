@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://growthai-business-backend.onrender.com';
 
 export const submitBusinessData = async (name, location) => {
   const res = await fetch(`${BASE_URL}/business-data`, {

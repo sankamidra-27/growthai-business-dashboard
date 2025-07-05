@@ -1,12 +1,31 @@
-# React + Vite
+# GrowthAI Business Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered local business dashboard where users can enter business details and receive SEO-optimized headlines, simulated ratings, and review data. Includes a responsive React frontend styled with Tailwind CSS and a Node.js + Express backend with no database.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Demo Preview
 
-## Expanding the ESLint configuration
+> Enter your business name and location to instantly generate:
+> - Simulated Google rating & reviews
+> - AI-style SEO headline
+> - Option to regenerate headline with a single click
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📁 Project Structure
+
+growthai-business-dashboard/
+│
+├── backend/                  
+│   ├── routes/              
+│   ├── utils/               
+│   └── server.js            
+│
+└── frontend/                
+    ├── src/
+    │   ├── components/      
+    │   ├── services/        
+    │   └── App.jsx          
+    ├── index.css            
+    └── tailwind.config.js

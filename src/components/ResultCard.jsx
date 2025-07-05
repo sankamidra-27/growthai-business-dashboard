@@ -2,33 +2,41 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 const ResultCard = ({ result, onRegenerate, loading }) => {
   const renderStars = (rating) => {
-    const stars = [];
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 >= 0.25 && rating % 1 < 0.75;
+  const stars = [];
+  const rounded = Math.round(rating * 2) / 2; // Round to nearest 0.5
+  const fullStars = Math.floor(rounded);
+  const hasHalfStar = rounded % 1 !== 0;
 
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(<FaStar key={`full-${i}`} className="text-yellow-400" />);
-    }
+  // Full stars
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(<FaStar key={`star-full-${i}`} className="text-yellow-400" />);
+  }
 
-    if (hasHalfStar) {
-      stars.push(<FaStarHalfAlt key="half" className="text-yellow-400" />);
-    }
-
-    while (stars.length < 5) {
-      stars.push(
-        <FaRegStar key={`empty-${stars.length}`} className="text-yellow-400" />
-      );
-    }
-
-    return (
-      <div
-        className="flex items-center gap-0.5"
-        title={`${rating} out of 5 stars`}
-      >
-        {stars}
-      </div>
+  // Half star
+  if (hasHalfStar) {
+    stars.push(
+      <FaStarHalfAlt key={`star-half`} className="text-yellow-400" />
     );
-  };
+  }
+
+  // Empty stars
+  const totalRendered = fullStars + (hasHalfStar ? 1 : 0);
+  for (let i = totalRendered; i < 5; i++) {
+    stars.push(
+      <FaRegStar key={`star-empty-${i}`} className="text-yellow-400" />
+    );
+  }
+
+  return (
+    <div
+      className="flex items-center gap-0.5"
+      title={`${rating} out of 5 stars`}
+    >
+      {stars}
+    </div>
+  );
+};
+
 
   return (
     <div className="space-y-4 px-4 sm:px-0">

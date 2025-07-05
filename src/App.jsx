@@ -33,27 +33,29 @@ function App() {
         <h2 className="text-green-600 text-sm font-semibold mb-2">
           AI-Powered Business & Web Growth Solutions
         </h2>
-        <h1 className="text-4xl sm:text-5xl py-4 font-bold text-transparent bg-clip-text bg-[linear-gradient(to_right,_#15813e,_#22c55e)]">
+        <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-[linear-gradient(to_right,_#15813e,_#22c55e)] mb-[15px]">
           Get Found. Get Chosen. Grow Effortlessly.
         </h1>
 
         <BusinessForm onSubmit={handleFormSubmit} disabled={loading} />
 
-{loading ? (
-  <div className="mt-6 h-[180px] bg-white p-6 rounded-lg shadow-md w-full max-w-xl mx-auto text-left flex flex-col justify-center space-y-4">
-    <div className="h-4 w-1/2 rounded bg-[linear-gradient(to_right,_#15813e,_#22c55e)] animate-pulse"></div>
-    <div className="h-6 w-2/3 rounded bg-[linear-gradient(to_right,_#15813e,_#22c55e)] animate-pulse"></div>
-    <div className="h-10 w-3/3 rounded bg-[linear-gradient(to_right,_#15813e,_#22c55e)] animate-pulse"></div>
-  </div>
-) : (
-  result && (
-    <div className="mt-6 h-[180px] bg-white p-6 rounded-lg shadow-md w-full max-w-xl mx-auto text-left flex flex-col justify-between space-y-4">
-      <ResultCard result={result} onRegenerate={handleRegenerate} loading={loading} />
-    </div>
-  )
-)}
-
-
+        {loading ? (
+          <div className="mt-6 h-[180px] bg-white p-6 rounded-lg shadow-md w-full max-w-xl mx-auto text-left flex flex-col justify-center space-y-4">
+            <div className="h-4 w-1/2 rounded bg-[linear-gradient(to_right,_#15813e,_#22c55e)] animate-pulse"></div>
+            <div className="h-6 w-2/3 rounded bg-[linear-gradient(to_right,_#15813e,_#22c55e)] animate-pulse"></div>
+            <div className="h-10 w-3/3 rounded bg-[linear-gradient(to_right,_#15813e,_#22c55e)] animate-pulse"></div>
+          </div>
+        ) : (
+          result && (
+            <div className="mt-6 h-[180px] bg-white p-6 rounded-lg shadow-md w-full max-w-xl mx-auto text-left flex flex-col justify-between space-y-4">
+              <ResultCard
+                result={result}
+                onRegenerate={handleRegenerate}
+                loading={loading}
+              />
+            </div>
+          )
+        )}
       </div>
     </div>
   );

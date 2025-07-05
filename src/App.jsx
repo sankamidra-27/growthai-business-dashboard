@@ -13,7 +13,7 @@ function App() {
     setFormData({ name, location });
     const response = await submitBusinessData(name, location);
     setResult(response);
-    setTimeout(() => setLoading(false),100); 
+    setTimeout(() => setLoading(false), 100);
   };
 
   const handleRegenerate = async () => {
@@ -24,7 +24,7 @@ function App() {
       result.headline
     );
     setResult((prev) => ({ ...prev, headline: response.headline }));
-    setTimeout(() => setLoading(false),100); 
+    setTimeout(() => setLoading(false), 100);
   };
 
   return (
@@ -47,7 +47,7 @@ function App() {
           </div>
         ) : (
           result && (
-            <div className="mt-6 h-[200px] bg-white p-6 rounded-lg shadow-md w-full max-w-xl mx-auto text-left flex flex-col justify-between space-y-4">
+            <div className="mt-6 h-[210px] bg-white p-6 rounded-lg shadow-md w-full max-w-xl mx-auto text-left flex flex-col justify-between">
               <ResultCard
                 result={result}
                 onRegenerate={handleRegenerate}
